@@ -1,0 +1,51 @@
+:uri-k8s-convert: https://pkl-lang.org/package-docs/io.k8s.convert/index.html
+
+[[basic-pkl-k8s-example]]
+= Basic Pkl/K8s Example
+
+This example demonstrates how to
+
+* convert YAML manifests to Pkl
+* evaluate Pkl manifests to YAML
+* catch manifest errors during evaluation
+* apply Pkl manifests to Kubernetes.
+
+To convert the YAML manifests located in the _yaml_ directory to Pkl,
+run {uri-k8s-convert}[io.k8s.convert] for each YAML file:
+
+[source,bash]
+----
+$ pkl eval -p input=../../yaml/frontend.yaml \
+    -o frontend.pkl \
+    applehub:io.k8s.convert:af50691d
+
+$ pkl eval -p input=../../yaml/redis-primary.yaml \
+    -o redis-primary.pkl \
+    applehub:io.k8s.convert:af50691d
+
+$ pkl eval -p input=../../yaml/redis-secondary.yaml \
+    -o redis-secondary.pkl \
+    applehub:io.k8s.convert:af50691d
+----
+
+To evaluate the Pkl manifests back to YAML, run:
+
+[source,bash]
+----
+$ pkl eval *.pkl
+----
+
+To see Pkl validation in action, open _frontend.pkl_,
+make one of the following edits, and re-run `pkl eval *.pkl`:
+
+* `pork = 80` in line 18 (misspelled field name)
+* `port = "80"` in line 18 (wrong type of value)
+* `port = 99999` in line 18 (value out of range)
+* `type = "Custom"` in line 15 (invalid enum value)
+
+To apply the Pkl manifests to Kubernetes, run:
+
+[source,bash]
+----
+$ pkl eval *.pkl | kubectl apply -f -
+----

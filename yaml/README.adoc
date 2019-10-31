@@ -1,0 +1,7 @@
+:uri-k8s-guestbook: https://github.com/kubernetes/examples/tree/master/guestbook
+
+[[guestbook-yaml-manifests]]
+= GuestBook YAML Manifests
+
+This directory contains YAML manifests for the official {uri-k8s-guestbook}[guestbook] Kubernetes example.
+For simplicity, _-service_ and _-deployment_ manifests have been merged.

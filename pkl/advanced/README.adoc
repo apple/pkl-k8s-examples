@@ -1,0 +1,52 @@
+:uri-k8s-app-env-cluster: https://pkl-lang.org/package-docs/org.pkl.k8s/current/AppEnvCluster/index.html
+:uri-output-path-flag: https://pkl-lang.org/main/current/pkl-cli/index.html#output-path
+:uri-multiple-file-output-path-flag: https://pkl-lang.org/main/current/pkl-cli/index.html#multiple-file-output-path
+
+[[advanced-pkl-k8s-example]]
+= Advanced Pkl/K8s Example
+
+This example demonstrates how to manage Pkl manifests for the _guestbook_ and _redis_ applications deployed to _production_ and _staging_ environments
+in the _us-west_ Kubernetes cluster.
+
+Manifest files amend the {uri-k8s-app-env-cluster}[AppEnvCluster] Pkl template.
+This template mandates a three-level _application/environment/cluster_ directory structure
+whose leaf directories contain the manifest files for a particular combination of application, environment, and cluster.
+Manifest files placed in parent directories are merged with equally named manifest files in leaf directories.
+
+To evaluate all Pkl manifests, run:
+
+[source,bash]
+----
+$ pkl eval **/*.pkl
+----
+
+NOTE:: Depending on your shell, you may need to enable support for `+**+` in glob patterns.
+In _zsh_, `+**+` is enabled by default.
+In _bash_ v4 and higher, `+**+` is enabled with `shopt -s globstar`.
+
+To evaluate Pkl manifests for all applications in the _staging_ environment in the _us-west_ cluster, run:
+
+[source,bash]
+----
+$ pkl eval */staging/us-west/*.pkl
+----
+
+To apply Pkl manifests for the _guestbook_ application in the _production_ environment in the _us-west_ cluster to Kubernetes, run:
+
+[source,bash]
+----
+$ pkl eval guestbook/production/us-west/*.pkl | kubectl apply -f -
+----
+
+By default, all resources are written to standard output as a YAML stream (each resource gets separated by `---`). This output may be written to disk using the {uri-output-path-flag}}[`-o`] flag.
+
+Alternatively, each resouce may be written to its own file using the {uri-multiple-file-output-path-flag}[`-m`] flag. In this mode, each resource gets written to a directory that matches the three-level hierarchy.
+
+[source,bash]
+----
+# Write all resources as a YAML stream to `output.yml`
+$ pkl eval -o output.yml **/*.pkl
+
+# Write each resource as its own file to a path within `.output/`
+$ pkl eval -m .output/ **/*.pkl
+----

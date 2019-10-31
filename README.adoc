@@ -1,0 +1,50 @@
+:uri-pkl: https://pkl-lang.org/main/current/index.html
+:uri-pkl-intellij: https://pkl-lang.org/intellij/current/index.html
+:uri-k8s-convert: https://pkl-lang.org/package-docs/io.k8s/current/convert/index.html
+:uri-k8s-templates: https://pkl-lang.org/package-docs/io.k8s/current/K8sResource/index.html
+:uri-k8s-app-env-cluster: https://pkl-lang.org/package-docs/io.k8s/af50691d/AppEnvCluster/index.html
+:uri-pkl-comparison: https://pkl-lang.org/main/current/introduction/comparison.html
+:uri-github-discussions: https://github.com/apple/pkl/discussions
+:uri-pkl-install: https://pkl-lang.org/main/current/pkl-cli/index.html#homebrew
+
+= Pkl/K8s Examples
+
+== What's In This Repo?
+
+The <<yaml/README.adoc#guestbook-yaml-manifests,yaml>> directory contains YAML manifests for the official _guestbook_ Kubernetes example.
+
+The <<pkl/basic/README.adoc#basic-pkl-k8s-example,pkl/basic>> example demonstrates how to
+
+* convert YAML manifests to Pkl
+* evaluate Pkl manifests back to YAML
+* catch manifest errors during evaluation
+* apply Pkl manifests to Kubernetes.
+
+The <<pkl/advanced/README.adoc#advanced-pkl-k8s-example,pkl/advanced>> example demonstrates how to manage Pkl manifests for multiple applications, deployment environments, and Kubernetes clusters.
+
+To run the examples, install the {uri-pkl-install}[Pkl CLI].
+
+== Why Pkl/K8s?
+
+Kubernetes requires a lot of YAML configuration.
+To make a single configuration change, users often need to touch multiple YAML files, which is time-consuming and error-prone.
+Configuration errors aren't discovered until the configuration is applied.
+
+{uri-k8s-templates}[Pkl/K8s], a set of {uri-pkl}[Pkl] templates derived from Kubernetes' OpenAPI spec, is here to save the day.
+Writing Kubernetes manifests in Pkl offers the following benefits:
+
+* Strong local validation that goes beyond Kubernetes' OpenAPI spec.
+* Easy sharing of configuration across applications, environments, and clusters with the {uri-k8s-app-env-cluster}[AppEnvCluster] Pkl template.
+  See the <<pkl/advanced/README.adoc#advanced-pkl-k8s-example,advanced example>> for details.
+* Great IDE experience with validation, code completion, and direct access to Kubernetes documentation.
+  Requires the {uri-pkl-intellij}[Pkl IntelliJ Plugin] for JetBrains IDEs (IDEA, GoLand, PyCharm, etc).
+
+The {uri-k8s-convert}[io.k8s.convert] Pkl module automatically converts Kubernetes manifests from YAML to Pkl.
+See the <<pkl/basic/README.adoc#basic-pkl-k8s-example,basic example>> for details.
+
+Still unconvinced? See {uri-pkl-comparison}[Comparison] for the Pkl team's perspective on how Pkl compares to other configuration formats and languages,
+
+== Where To Get Help?
+
+* File a GitHub Issue.
+* Ask a question on {uri-github-discussions}[GitHub discussions].

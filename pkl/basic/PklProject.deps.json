@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "resolvedDependencies": {
+    "package://package.com.io.k8s@1": {
+      "type": "remote",
+      "uri": "projectpackage://package.com.io.k8s@1.0.0",
+      "checksums": {
+        "sha256": "663941ec92c309929a451ee681e26a44e7e0dd523c598c6de8d2aa988a4550cb"
+      }
+    }
+  }
+}
