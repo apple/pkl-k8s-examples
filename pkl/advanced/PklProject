@@ -2,9 +2,9 @@ amends "pkl:Project"
 
 dependencies {
   ["k8s"] {
-    uri = "package://pkg.pkl-lang.org/pkl-k8s/k8s@1.0.0"
+    uri = "package://pkg.pkl-lang.org/pkl-k8s/k8s@1.0.1"
   }
-  ["appenvcluster"] {
-    uri = "package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib.aec@1.0.0"
+  ["appEnvCluster"] {
+    uri = "package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib.appEnvCluster@1.0.0"
   }
 }
