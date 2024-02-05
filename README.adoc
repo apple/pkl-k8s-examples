@@ -2,7 +2,7 @@
 :uri-pkl-intellij: https://pkl-lang.org/intellij/current/index.html
 :uri-k8s-convert: https://pkl-lang.org/package-docs/io.k8s/current/convert/index.html
 :uri-k8s-templates: https://pkl-lang.org/package-docs/io.k8s/current/K8sResource/index.html
-:uri-k8s-app-env-cluster: https://pkl-lang.org/package-docs/io.k8s/af50691d/AppEnvCluster/index.html
+:uri-k8s-app-env-cluster: https://pkl-lang.org/package-docs/pkg.pkl-lang.org/pkl-pantry/k8s.contrib.appEnvCluster/current/AppEnvCluster/index.html
 :uri-pkl-comparison: https://pkl-lang.org/main/current/introduction/comparison.html
 :uri-github-discussions: https://github.com/apple/pkl/discussions
 :uri-pkl-install: https://pkl-lang.org/main/current/pkl-cli/index.html#homebrew

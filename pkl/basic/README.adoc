@@ -17,15 +17,15 @@ run {uri-k8s-convert}[io.k8s.convert] for each YAML file:
 ----
 $ pkl eval -p input=../../yaml/frontend.yaml \
     -o frontend.pkl \
-    applehub:io.k8s.convert:af50691d
+    package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib@1.0.0#/convert.pkl
 
 $ pkl eval -p input=../../yaml/redis-primary.yaml \
     -o redis-primary.pkl \
-    applehub:io.k8s.convert:af50691d
+    package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib@1.0.0#/convert.pkl
 
 $ pkl eval -p input=../../yaml/redis-secondary.yaml \
     -o redis-secondary.pkl \
-    applehub:io.k8s.convert:af50691d
+    package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib@1.0.0#/convert.pkl
 ----
 
 To evaluate the Pkl manifests back to YAML, run:
