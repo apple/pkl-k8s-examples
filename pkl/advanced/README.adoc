@@ -40,7 +40,7 @@ $ pkl eval guestbook/production/us-west/*.pkl | kubectl apply -f -
 
 By default, all resources are written to standard output as a YAML stream (each resource gets separated by `---`). This output may be written to disk using the {uri-output-path-flag}}[`-o`] flag.
 
-Alternatively, each resouce may be written to its own file using the {uri-multiple-file-output-path-flag}[`-m`] flag. In this mode, each resource gets written to a directory that matches the three-level hierarchy.
+Alternatively, each resource may be written to its own file using the {uri-multiple-file-output-path-flag}[`-m`] flag. In this mode, each resource gets written to a directory that matches the three-level hierarchy.
 
 [source,bash]
 ----
