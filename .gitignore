@@ -2,6 +2,8 @@
 .gradle/
 .idea/
 build/
+.pkl-lsp/
+.vscode/
 
 *.iml
 *.ipr
