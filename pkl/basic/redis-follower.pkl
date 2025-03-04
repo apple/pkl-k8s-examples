@@ -20,58 +20,57 @@ import "@k8s/api/core/v1/Service.pkl"
 resources: Listing<K8sResource> = new {
   new Service {
     metadata {
-      name = "redis-primary"
+      name = "redis-follower"
       labels {
         ["app"] = "redis"
         ["tier"] = "backend"
-        ["role"] = "primary"
+        ["role"] = "follower"
       }
     }
     spec {
       ports {
         new {
           port = 6379
-          targetPort = 6379
         }
       }
       selector {
         ["app"] = "redis"
         ["tier"] = "backend"
-        ["role"] = "primary"
+        ["role"] = "follower"
       }
     }
   }
 
   new Deployment {
     metadata {
-      name = "redis-primary"
+      name = "redis-follower"
     }
     spec {
       selector {
         matchLabels {
           ["app"] = "redis"
-          ["role"] = "primary"
+          ["role"] = "follower"
           ["tier"] = "backend"
         }
       }
-      replicas = 1
+      replicas = 2
       template {
         metadata {
           labels {
             ["app"] = "redis"
-            ["role"] = "primary"
+            ["role"] = "follower"
             ["tier"] = "backend"
           }
         }
         spec {
           containers {
             new {
-              name = "primary"
-              image = "k8s.gcr.io/redis:e2e"
+              name = "follower"
+              image = "us-docker.pkg.dev/google-samples/containers/gke/gb-redis-follower:v2"
               resources {
                 requests {
                   ["cpu"] = "100m"
-                  ["memory"] = "100Mi"
+                  ["memory"] = 100.mib
                 }
               }
               ports {
