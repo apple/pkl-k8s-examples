@@ -1,4 +1,4 @@
-:uri-k8s-app-env-cluster: https://pkl-lang.org/package-docs/org.pkl.k8s/current/AppEnvCluster/index.html
+:uri-k8s-app-env-cluster: https://pkl-lang.org/package-docs/pkg.pkl-lang.org/pkl-pantry/k8s.contrib.appEnvCluster/current/AppEnvCluster/index.html
 :uri-output-path-flag: https://pkl-lang.org/main/current/pkl-cli/index.html#output-path
 :uri-multiple-file-output-path-flag: https://pkl-lang.org/main/current/pkl-cli/index.html#multiple-file-output-path
 

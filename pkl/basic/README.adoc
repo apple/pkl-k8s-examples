@@ -19,12 +19,12 @@ $ pkl eval -p input=../../yaml/frontend.yaml \
     -o frontend.pkl \
     package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib@1.0.1#/convert.pkl
 
-$ pkl eval -p input=../../yaml/redis-primary.yaml \
-    -o redis-primary.pkl \
+$ pkl eval -p input=../../yaml/redis-leader.yaml \
+    -o redis-leader.pkl \
     package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib@1.0.1#/convert.pkl
 
-$ pkl eval -p input=../../yaml/redis-secondary.yaml \
-    -o redis-secondary.pkl \
+$ pkl eval -p input=../../yaml/redis-follower.yaml \
+    -o redis-follower.pkl \
     package://pkg.pkl-lang.org/pkl-pantry/k8s.contrib@1.0.1#/convert.pkl
 ----
 

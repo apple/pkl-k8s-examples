@@ -34,10 +34,10 @@ services {
       }
     }
   }
-  ["redis-primary"] {
+  ["redis-leader"] {
     metadata {
       labels {
-        ["role"] = "primary"
+        ["role"] = "leader"
       }
     }
     spec {
@@ -47,20 +47,20 @@ services {
         }
       }
       selector {
-        ["role"] = "primary"
+        ["role"] = "leader"
       }
     }
   }
 
-  ["redis-secondary"] {
+  ["redis-follower"] {
     metadata {
       labels {
-        ["role"] = "secondary"
+        ["role"] = "follower"
       }
     }
     spec {
       selector {
-        ["role"] = "secondary"
+        ["role"] = "follower"
       }
     }
   }

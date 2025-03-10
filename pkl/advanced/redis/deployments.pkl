@@ -43,24 +43,24 @@ deployments {
       }
     }
   }
-  ["redis-primary"] {
+  ["redis-leader"] {
     spec {
       selector {
         matchLabels {
-          ["role"] = "primary"
+          ["role"] = "leader"
         }
       }
       replicas = 1
       template {
         metadata {
           labels {
-            ["role"] = "primary"
+            ["role"] = "leader"
           }
         }
         spec {
           containers {
             new {
-              name = "primary"
+              name = "leader"
               image = "k8s.gcr.io/redis:e2e"
             }
           }
@@ -69,25 +69,25 @@ deployments {
     }
   }
 
-  ["redis-secondary"] {
+  ["redis-follower"] {
     spec {
       selector {
         matchLabels {
-          ["role"] = "secondary"
+          ["role"] = "follower"
         }
       }
       replicas = 2
       template {
         metadata {
           labels {
-            ["role"] = "secondary"
+            ["role"] = "follower"
           }
         }
         spec {
           containers {
             new {
-              name = "secondary"
-              image = "gcr.io/google_samples/gb-redissecondary:v1"
+              name = "follower"
+              image = "us-docker.pkg.dev/google-samples/containers/gke/gb-redis-follower:v2"
               env {
                 new {
                   name = "GET_HOSTS_FROM"

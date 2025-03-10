@@ -16,12 +16,12 @@
 amends "..."
 
 deployments {
-  ["redis-secondary"] {
+  ["redis-follower"] {
     spec {
       template {
         spec {
           containers {
-            [[name == "secondary"]] {
+            [[name == "follower"]] {
               env {
                 [[name == "GET_HOSTS_FROM"]] {
                   value = "env"
