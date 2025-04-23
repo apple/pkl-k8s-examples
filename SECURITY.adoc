@@ -1,4 +1,4 @@
-= Security
+= Security test
 
 For the protection of our community, the Pkl team does not disclose, discuss, or confirm security issues until our investigation is complete and any necessary updates are generally available.
 
