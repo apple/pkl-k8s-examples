@@ -40,7 +40,8 @@ local baseWorkflow: Workflow = new {
           name = "Setup Java"
           with {
             distribution = "temurin"
-            `java-version` = "17.0.17"
+            `java-version` = "17"
+            cache = "gradle"
           }
         }
         new {
