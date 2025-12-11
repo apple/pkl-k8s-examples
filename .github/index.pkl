@@ -15,9 +15,8 @@
 //===----------------------------------------------------------------------===//
 amends "@pkl.impl.ghactions/PklCI.pkl"
 
-import "@gha/actions/Common.pkl"
-import "@gha/actions/Setup.pkl"
-import "@gha/Workflow.pkl"
+import "@com.github.actions/catalog.pkl"
+import "@com.github.actions/Workflow.pkl"
 
 build = baseWorkflow
 
@@ -31,12 +30,12 @@ local baseWorkflow: Workflow = new {
       name = "Build and test"
       `runs-on` = "ubuntu-latest"
       steps {
-        new Common.Checkout {
+        (catalog.`actions/checkout@v6`) {
           with {
             `fetch-depth` = 0
           }
         }
-        new Setup.Java {
+        (catalog.`actions/setup-java@v5`) {
           name = "Setup Java"
           with {
             distribution = "temurin"
