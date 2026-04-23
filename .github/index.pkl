@@ -51,3 +51,18 @@ local baseWorkflow: Workflow = new {
     }
   }
 }
+
+dependabot {
+  updates {
+    new {
+      `package-ecosystem` = "gradle"
+      directory = "/"
+      schedule {
+        interval = "weekly"
+      }
+      cooldown {
+        `default-days` = 7
+      }
+    }
+  }
+}
