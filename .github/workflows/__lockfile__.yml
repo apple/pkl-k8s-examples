@@ -22,3 +22,7 @@ jobs:
       uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
     - name: actions/upload-artifact@v5
       uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+    - name: github/codeql-action/analyze@v4
+      uses: github/codeql-action/analyze@95e58e9a2cdfd71adc6e0353d5c52f41a045d225 # v4
+    - name: github/codeql-action/init@v4
+      uses: github/codeql-action/init@95e58e9a2cdfd71adc6e0353d5c52f41a045d225 # v4
