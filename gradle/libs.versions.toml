@@ -1,6 +1,6 @@
 [versions]
 pkl = "0.25.1"
-spotless = "6.23.3"
+spotless = "8.4.0"
 
 [plugins]
 pkl = { id = "org.pkl-lang", version.ref = "pkl" }
