@@ -23,6 +23,6 @@ jobs:
     - name: actions/upload-artifact@v5
       uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
     - name: github/codeql-action/analyze@v4
-      uses: github/codeql-action/analyze@99df26d4f13ea111d4ec1a7dddef6063f76b97e9 # v4
+      uses: github/codeql-action/analyze@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4
     - name: github/codeql-action/init@v4
-      uses: github/codeql-action/init@99df26d4f13ea111d4ec1a7dddef6063f76b97e9 # v4
+      uses: github/codeql-action/init@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4
