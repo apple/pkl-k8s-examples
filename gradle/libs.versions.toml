@@ -1,5 +1,5 @@
 [versions]
-pkl = "0.32.0"
+pkl = "0.32.1"
 spotless = "8.10.2"
 
 [plugins]
